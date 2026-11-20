@@ -1,0 +1,32 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "realis-studio",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": true,
+  "main": "worker/index.ts",
+  "routes": [
+    { "pattern": "REPLACE_ME.example.com", "custom_domain": true },
+    { "pattern": "www.REPLACE_ME.example.com", "custom_domain": true }
+  ],
+  "vars": {
+    // Public: the same address the site already prints on the contact page.
+    "CONTACT_INBOX": "hello@realisstudio.com",
+    // The envelope: sent from a name on this domain, delivered to the
+    // verified destination Email Routing already forwards hello@ to.
+    "CONTACT_FROM": "REPLACE_ME@example.com",
+    "CONTACT_TO": "REPLACE_ME@example.com"
+  },
+  // The Worker sends the enquiry itself rather than handing it to a form
+  // service. The destination is the one already verified in this account.
+  "send_email": [{ "name": "MAIL", "destination_address": "REPLACE_ME@example.com" }],
+  "assets": {
+    "binding": "ASSETS",
+    // The Worker exists only to send www and http to the canonical origin,
+    // which is a question about pages, not about files. Assets are served
+    // straight from the edge without invoking it.
+    "run_worker_first": ["/*", "!/assets/*", "!/site.css", "!/site.js", "!/ad-*", "!/speculation-rules.json", "!/favicon.svg", "!/og.png", "!/robots.txt", "!/sitemap*"],
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}

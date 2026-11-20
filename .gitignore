@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+.wrangler/
+
+# Browser-automation logs from test sessions
+.playwright-mcp/
+
+# Per-machine editor and session settings
+.claude/
+
+# Secrets never belong in the repo
+.env
+.env.*
+.dev.vars

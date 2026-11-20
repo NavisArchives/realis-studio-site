@@ -1,0 +1,85 @@
+/* Approval portal, the animated tile (ad C): classes all start with apa */
+/* Layout (square, 100cqw wide): the docked question on top, the portal between 20.5 and 85cqw, the
+   caption band below it. The portal's colours come from its captures: navy panels, a light-blue
+   accent, amber for « reprendre ». */
+.apa { position: absolute; inset: 0; overflow: hidden; font-family: 'Inter Tight', sans-serif; font-variant-numeric: tabular-nums; color: #e9eff7; }
+.apa p, .apa ul { margin: 0; padding: 0; list-style: none; }
+.apa .ck { height: auto; flex: none; }
+.apa-lab { font: 400 3.4cqw/1.3 ui-monospace, 'SF Mono', Menlo, monospace; letter-spacing: 0.06em; text-transform: uppercase; color: #8b9bb2; white-space: nowrap; }
+
+/* the question: alone and large (the header scaled up), then docked as the header, then answered */
+.apa-hq .apa-wm, .apa-end .apa-wm { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+.apa-hq .apa-w, .apa-end .apa-w { display: inline-block; }
+.apa-hd { position: absolute; left: 7cqw; right: 7cqw; top: 5.6cqw; display: grid; }
+.apa-hd p { grid-area: 1 / 1; align-self: start; color: #f2f6fc; visibility: hidden; }
+.apa-hq { font-size: 4.7cqw; font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; }
+.apa-hq > span { display: block; width: fit-content; white-space: nowrap; }
+.apa-ha { font-size: 6.6cqw; font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; }
+
+/* the portal's three views share one place */
+.apa-panel, .apa-sheet, .apa-page { position: absolute; left: 6cqw; width: 88cqw; top: 20.5cqw; height: 64.5cqw; box-sizing: border-box; border-radius: 3.2cqw; background: #12203a; box-shadow: 0 3cqw 8cqw -2cqw rgba(4, 10, 22, 0.55); visibility: hidden; }
+
+/* Missions */
+.apa-panel { padding: 4.4cqw 4.6cqw 0; }
+.apa-rows { margin-top: 2cqw !important; }
+.apa-row { --sh: 0; position: relative; display: grid; grid-template-columns: 1.7cqw 1fr auto; align-items: center; column-gap: 3cqw; height: 10cqw; padding: 0 2.2cqw; margin: 0 -2.2cqw; border-radius: 2cqw; box-shadow: 0 1.6cqw 4cqw -1cqw rgba(4, 10, 22, calc(var(--sh) * 0.7)); }
+.apa-dot { width: 1.7cqw; height: 1.7cqw; border-radius: 50%; background: #8fc3f0; }
+.apa-row.-kine .apa-dot { background: #e5b252; }
+.apa-row.-new .apa-dot { background: #7d8aa0; }
+.apa-row b { display: block; font-size: 3.9cqw; font-weight: 500; line-height: 1.2; color: #e9eff7; }
+.apa-row p span { display: block; font-size: 3.4cqw; line-height: 1.25; color: #8b9bb2; white-space: nowrap; }
+.apa-row em { font: normal 400 3.4cqw/1 ui-monospace, 'SF Mono', Menlo, monospace; letter-spacing: 0.06em; text-transform: uppercase; padding: 1.3cqw 2.1cqw; border-radius: 9cqw; background: #173153; color: #8fc3f0; }
+.apa-row.-kine em { background: #3a2c12; color: #e5b252; }
+.apa-row.-new em { background: #1c2a40; color: #8c99ad; }
+
+/* one field at a time (the Kiné du sport row opens into it) */
+.apa-sheet { z-index: 2; overflow: hidden; background: #14243e; }
+.apa-sh-in { position: absolute; left: 0; top: 0; width: 88cqw; height: 64.5cqw; box-sizing: border-box; padding: 4.4cqw 4.6cqw; }
+.apa-h { font-size: 5.6cqw; font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; color: #f2f6fc; }
+.apa-x { position: absolute; right: 4.6cqw; top: 3.6cqw; width: 7.4cqw; height: 7.4cqw; border-radius: 50%; box-shadow: inset 0 0 0 0.25cqw #2c4468; }
+.apa-x::before, .apa-x::after { content: ''; position: absolute; left: 50%; top: 50%; width: 2.8cqw; height: 0.45cqw; margin: -0.225cqw 0 0 -1.4cqw; border-radius: 1cqw; background: #c9d6e6; transform: rotate(45deg); }
+.apa-x::after { transform: rotate(-45deg); }
+.apa-prog { display: flex; align-items: center; gap: 3cqw; margin-top: 2.8cqw; font-size: 3.4cqw; line-height: 1.2; color: #8b9bb2; white-space: nowrap; }
+.apa-bar { position: relative; flex: 1; height: 1.4cqw; border-radius: 1cqw; overflow: hidden; background: #22385a; }
+.apa-bar i { position: absolute; inset: 0; border-radius: inherit; background: #93c5f0; transform-origin: 0 50%; transform: scaleX(0); }
+.apa-k { position: relative; display: inline-block; height: 1.2em; overflow: hidden; vertical-align: top; }
+.apa-k b, .apa-n { font-weight: 500; color: #e9eff7; }
+.apa-k b { display: block; } .apa-k b + b { position: absolute; left: 0; top: 100%; }
+.apa-field { --ring: 0; margin-top: 2.8cqw; padding: 3.2cqw 3.6cqw; border-radius: 2.4cqw; background: #1a2c48; box-shadow: inset 0 0 0 0.3cqw rgba(147, 197, 240, calc(var(--ring) * 0.8)); }
+.apa-fl { font: 400 3.4cqw/1.3 ui-monospace, 'SF Mono', Menlo, monospace; letter-spacing: 0.06em; text-transform: uppercase; color: #8fc3f0; white-space: nowrap; }
+.apa-fv { margin-top: 1.4cqw !important; font-size: 3.8cqw; line-height: 1.38; color: #e9eff7; }
+.apa-rd { --rd: 0%; --ra: 1; background: linear-gradient(rgba(147, 197, 240, calc(var(--ra) * 0.2)), rgba(147, 197, 240, calc(var(--ra) * 0.2))) no-repeat 0 0 / var(--rd) 100%; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.apa-wd { --w: 0%; --wa: 1; padding: 0 0.12em; margin: 0 -0.12em; border-radius: 0.25em; background: linear-gradient(rgba(229, 178, 82, calc(var(--wa) * 0.34)), rgba(229, 178, 82, calc(var(--wa) * 0.34))) no-repeat 0 0 / var(--w) 100%; }
+.apa-caret { display: inline-block; width: 0.35cqw; height: 4.4cqw; margin: 0 -0.175cqw; vertical-align: -0.85cqw; background: #93c5f0; visibility: hidden; }
+.apa-btns { position: relative; height: 8.4cqw; margin-top: 2.8cqw; }
+.apa-b { position: absolute; top: 0; height: 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border-radius: 9cqw; font-size: 3.8cqw; font-weight: 500; white-space: nowrap; }
+.apa-b.-mod { left: 0; width: 38%; box-shadow: inset 0 0 0 0.25cqw #2c4468; color: #c9d6e6; }
+.apa-b.-ok { left: 41%; width: 59%; background: #93c5f0; color: #0d1a2e; }
+.apa-chip { position: absolute; left: 0; top: 0; height: 100%; box-sizing: border-box; display: inline-flex; align-items: center; gap: 1.6cqw; padding: 0 3.6cqw; border-radius: 9cqw; box-shadow: inset 0 0 0 0.25cqw rgba(147, 197, 240, 0.75); color: #a9d0f4; font-size: 3.8cqw; font-weight: 500; white-space: nowrap; visibility: hidden; }
+.apa-chip .ck { width: 3.8cqw; }
+
+/* the page, ticked */
+.apa-page { padding: 4.4cqw 4.6cqw; }
+.apa-ph { display: flex; align-items: center; justify-content: space-between; gap: 3cqw; }
+.apa-st { display: inline-grid; grid-template-columns: auto auto auto; align-items: center; column-gap: 1.6cqw; padding: 1.5cqw 2.8cqw; border-radius: 9cqw; background: rgba(255, 255, 255, 0.06); font-size: 3.4cqw; line-height: 1.2; white-space: nowrap; }
+.apa-st b { font: 400 3.4cqw/1.2 ui-monospace, 'SF Mono', Menlo, monospace; letter-spacing: 0.06em; color: #8b9bb2; }
+.apa-st i { width: 1.6cqw; height: 1.6cqw; border-radius: 50%; background: #7d8aa0; }
+.apa-st span { grid-area: 1 / 3; color: #c9d6e6; } .apa-st .s2 { color: #d4e9fc; font-weight: 500; visibility: hidden; }
+.apa-page .apa-prog { margin-top: 2.6cqw; }
+.apa-fields { margin-top: 3cqw !important; display: grid; gap: 1.4cqw; }
+.apa-fields li { display: flex; align-items: center; justify-content: space-between; height: 8.2cqw; padding: 0 2cqw 0 3.4cqw; border-radius: 2cqw; background: #172a46; font-size: 3.6cqw; color: #dfe7f1; }
+.apa-ok { display: grid; place-items: center; width: 5.6cqw; height: 5.6cqw; border-radius: 50%; background: rgba(147, 197, 240, 0.16); color: #93c5f0; }
+.apa-ok .ck { width: 3.6cqw; }
+.apa-tick { display: flex; align-items: center; gap: 3cqw; margin-top: 2.8cqw; height: 9cqw; padding: 0 3.4cqw; border-radius: 2cqw; background: #1c3050; font-size: 3.9cqw; font-weight: 500; color: #f2f6fc; }
+.apa-box { --ring: 1; display: grid; place-items: center; width: 5.2cqw; height: 5.2cqw; border-radius: 1.2cqw; color: #0d1a2e; box-shadow: inset 0 0 0 0.3cqw rgba(147, 197, 240, calc(var(--ring) * 0.7)); }
+.apa-box .ck { width: 4cqw; }
+.apa-box .ck path { stroke-width: 2.2; }
+
+/* the captions (only where the picture can't say it), the end card, the note */
+.apa-caps { position: absolute; left: 7cqw; right: 7cqw; top: 88.5cqw; }
+.apa-cap { position: absolute; left: 0; right: 0; top: 0; overflow: hidden; padding-bottom: 0.12em; font-size: 4.8cqw; font-weight: 500; line-height: 1.2; letter-spacing: -0.015em; color: #f2f6fc; }
+.apa-cap > span { display: block; visibility: hidden; }
+.apa-endb { position: absolute; left: 7cqw; right: 7cqw; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; }
+.apa-end { font-size: 8.6cqw; font-weight: 600; line-height: 1.08; letter-spacing: -0.03em; color: #f2f6fc; visibility: hidden; }
+.apa-sign { margin-top: 4.4cqw !important; font-size: 4.6cqw; line-height: 1.25; color: rgba(222, 232, 245, 0.78); visibility: hidden; }
+.apa-note { position: absolute; right: 7cqw; bottom: 4.6cqw; font: 400 3.4cqw/1 ui-monospace, 'SF Mono', Menlo, monospace; letter-spacing: 0.02em; color: rgba(201, 216, 238, 0.6); visibility: hidden; }

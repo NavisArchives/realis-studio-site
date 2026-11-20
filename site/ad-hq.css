@@ -1,0 +1,110 @@
+/* Headquarters, the animated tile (ad A, the storyline): classes all start with hqa.
+   Everything in cqw (the tile is 100cqw wide; about 371 px at 1440, 357 px at 390; 116cqw tall on
+   desktop, 114cqw under 768 px, so 50 % of its height is 57–58cqw). HQ's own look: navy cards on the
+   blue ground, the light-blue accent, mono labels, no hairlines on the dark ground. */
+/* the first rule also serves the Vidimus tile (ad B), which relies on it: kept as it was */
+.hqa, .vda { position: absolute; inset: 0; overflow: hidden; font-family: 'Inter Tight', sans-serif; font-variant-numeric: tabular-nums; }
+.hqa p, .vda p { margin: 0; }
+.hqa { --hq-blue: #a9c8f0; --hq-ink: #0f1a2e; --hq-or: #f0a04b; color: #e8eef8; }
+/* without the script (or before it runs): the line alone */
+.hqa .hqa-q, .hqa-ans, .hqa-yr, .hqa-c, .hqa-card, .hqa-btn, .hqa-doc, .hqa-toast { visibility: hidden; }
+
+/* the question: large and centred (the hook), then docked as the header (scaled down from the top
+   centre, so its lines never change); the answer takes its place, in the header's size */
+.hqa .hqa-q, .hqa .hqa-ans { position: absolute; left: 7cqw; right: 7cqw; font-weight: 600; line-height: 1.1; letter-spacing: -0.025em; text-align: center; color: #f2f6fc; }
+.hqa .hqa-q { top: 0; bottom: 0; height: fit-content; margin: auto 0; font-size: 8.4cqw; }
+.hqa .hqa-ans { top: 6cqw; font-size: 6.2cqw; }
+.hqa-wm { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em; }
+.hqa-w { display: inline-block; }
+
+/* the year */
+.hqa .hqa-yr { position: absolute; left: 7cqw; top: 24.2cqw; font-size: 4.2cqw; font-weight: 600; line-height: 1; color: #c9d8ee; }
+.hqa-grid { position: absolute; left: 7cqw; right: 7cqw; top: 30.5cqw; bottom: 8.5cqw; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(4, 1fr); gap: 2.2cqw; }
+.hqa-c { position: relative; overflow: hidden; border-radius: 2.2cqw; background: rgba(8, 17, 32, 0.4); }
+.hqa-c span { position: absolute; left: 2.8cqw; top: 2.4cqw; z-index: 1; font-size: 3.7cqw; font-weight: 500; color: #c9d8ee; }
+.hqa-dot { position: absolute; right: 2.8cqw; top: 3.3cqw; z-index: 1; width: 1.8cqw; height: 1.8cqw; border-radius: 50%; background: var(--hq-blue); }
+.hqa-fill { position: absolute; left: var(--fx, 50%); top: var(--fy, 50%); width: 320%; aspect-ratio: 1; margin: -160% 0 0 -160%; border-radius: 50%; background: var(--hq-blue); transform: scale(0); }
+
+/* the month card (centred between the header and the foot; it moves up 8.2cqw to make room for the button,
+   so card, gap and button stay centred together) */
+.hqa-card { position: absolute; left: 7cqw; right: 7cqw; top: calc(50% - 24.2cqw); height: 62cqw; border-radius: 2.6cqw; background: rgba(8, 17, 32, 0.42); }
+.hqa .hqa-mt { position: absolute; left: 4cqw; top: 3.6cqw; font-size: 4.2cqw; font-weight: 600; line-height: 1.2; white-space: nowrap; }
+.hqa-ring { position: absolute; left: 3.5cqw; top: 12cqw; width: 44cqw; aspect-ratio: 1; }
+.hqa-ring svg { display: block; width: 100%; height: 100%; transform: rotate(-90deg); }
+.hqa-ring circle { fill: none; stroke-width: 8; }
+.hqa-tr { stroke: rgba(169, 200, 240, 0.12); }
+.hqa-sg.-o { stroke: var(--hq-or); }
+.hqa-tot { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; }
+.hqa-tot b { font-size: 7.9cqw; font-weight: 600; line-height: 1; letter-spacing: -0.035em; white-space: nowrap; }
+.hqa-tot span { margin-top: 1.2cqw; font-size: 3.4cqw; line-height: 1.2; color: #b4c5dc; }
+.hqa-tot em { position: absolute; left: 0; right: 0; top: 50%; margin-top: 7.6cqw; font-style: normal; text-align: center; font-size: 4cqw; font-weight: 600; line-height: 1.2; color: var(--hq-or); white-space: nowrap; }
+.hqa-leg { position: absolute; left: 51cqw; right: 2.6cqw; top: 9cqw; height: 50cqw; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; justify-content: center; gap: 1.8cqw; }
+.hqa-leg li { display: grid; grid-template-columns: 2.2cqw 1fr; column-gap: 1.6cqw; align-items: center; }
+.hqa-leg i { width: 2.2cqw; height: 2.2cqw; border-radius: 50%; }
+.hqa-leg li.-o i { background: var(--hq-or); }
+.hqa-leg span { font-size: 3.4cqw; line-height: 1.25; color: #b4c5dc; white-space: nowrap; }
+.hqa-leg b { grid-column: 2; font-size: 4.2cqw; font-weight: 600; line-height: 1.2; color: #eef3fa; white-space: nowrap; }
+.hqa .hqa-stt { grid-column: 2; position: relative; margin-top: 0.4cqw; font-size: 3.4cqw; font-weight: 500; line-height: 1.2; }
+.hqa-stt .hqa-sa { display: block; color: var(--hq-or); white-space: normal; }
+.hqa-stt .hqa-sb { position: absolute; left: 0; top: 0; color: var(--hq-blue); }
+
+/* the buttons: HQ's primary pill, 12.4cqw tall (44 px at 357) */
+.hqa-btn { position: absolute; overflow: hidden; height: 12.4cqw; border-radius: 99px; background: var(--hq-blue); color: var(--hq-ink); font-size: 4.2cqw; font-weight: 600; line-height: 1; white-space: nowrap; }
+.hqa-btn > span { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 2cqw; }
+.hqa-btn.-c { left: 7cqw; right: 7cqw; top: calc(50% + 34cqw); }
+.hqa-btn.-s { left: 9cqw; right: 9cqw; top: 80cqw; }
+.hqa-btn .hqa-b2, .hqa-btn .hqa-b3 { visibility: hidden; }
+.hqa-spin { width: 4.6cqw; height: auto; flex: none; }
+.hqa-spin circle { fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 30 50; }
+.hqa-ck { width: 4.2cqw; height: auto; flex: none; }
+
+/* the invoice: the document (its top: header, lines, total), its toast, the send button */
+.hqa-doc { position: absolute; left: 9cqw; right: 9cqw; top: 19.5cqw; padding: 5.4cqw 5.6cqw 5cqw; border-radius: 3.2cqw; background: #f6f9fd; color: var(--hq-ink); box-shadow: 0 4cqw 10cqw -3cqw rgba(0, 0, 0, 0.45); }
+.hqa-dh { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 2cqw; }
+.hqa-ic { display: block; width: 6.4cqw; height: auto; color: #3f6aa6; }
+.hqa .hqa-dt { font-size: 5cqw; font-weight: 600; line-height: 1.2; letter-spacing: -0.015em; }
+.hqa .hqa-dn { font: 400 3.4cqw/1.2 ui-monospace, 'SF Mono', Menlo, monospace; color: #5b6b82; white-space: nowrap; }
+.hqa-dl { margin: 5cqw 0 0; padding: 0; list-style: none; display: grid; gap: 2.4cqw; }
+/* HQ's flow (data-flow="hq"): a status pill (Draft · Issued · Sent, HQ's own labels and tones) and the
+   number on its own line under the title, empty until the invoice is issued */
+.hqa .hqa-pill { display: inline-grid; justify-self: end; }
+.hqa-pill span { grid-area: 1 / 1; justify-self: end; padding: 1cqw 2.4cqw; border-radius: 99px; font-size: 3.4cqw; font-weight: 600; line-height: 1.1; white-space: nowrap; visibility: hidden; }
+.hqa-pill .-d { background: #e7ecf3; color: #4d5d74; visibility: visible; }
+.hqa-pill .-i, .hqa-pill .-s { background: #fbefd6; color: #85560f; }
+.hqa .hqa-dn.-hq { margin: 0.6cqw 0 0 8.4cqw; visibility: hidden; }
+.hqa[data-flow="hq"] .hqa-dl { margin-top: 3.4cqw; }
+.hqa[data-flow="hq"] .hqa-btn.-s { top: 83cqw; }
+.hqa-dl li { display: flex; justify-content: space-between; gap: 3cqw; font-size: 3.6cqw; line-height: 1.3; color: #3a4a61; white-space: nowrap; }
+.hqa-dl b { font-weight: 500; color: var(--hq-ink); }
+.hqa .hqa-dtt { display: flex; justify-content: space-between; align-items: baseline; margin-top: 4cqw; padding-top: 3.6cqw; border-top: 1px solid rgba(15, 26, 46, 0.12); }
+.hqa-dtt span { font-size: 4.2cqw; font-weight: 600; }
+.hqa-dtt b { font-size: 8cqw; font-weight: 600; line-height: 1; letter-spacing: -0.03em; white-space: nowrap; }
+.hqa-toast { position: absolute; left: 0; right: 0; top: 5cqw; width: fit-content; margin: 0 auto; display: flex; align-items: center; gap: 1.6cqw; padding: 2.4cqw 4cqw 2.4cqw 3.4cqw; border-radius: 99px; background: #f6f9fd; color: var(--hq-ink); font-size: 3.8cqw; font-weight: 500; line-height: 1.2; white-space: nowrap; box-shadow: 0 2cqw 6cqw -2cqw rgba(0, 0, 0, 0.4); }
+.hqa-toast .hqa-ck { color: #2f5d9a; }
+
+/* the email (Andy's flow): HQ's navy card, mono field labels, the PDF attached, the light-blue Send with its
+   paper plane; it rises in front of the invoice, then folds into the plane that flies off (.hqa-fly) */
+.hqa-mail { position: absolute; left: 7cqw; right: 7cqw; top: 0; bottom: 0; z-index: 3; height: fit-content; margin: auto 0; padding: 4.8cqw 4.6cqw 4.6cqw; border-radius: 3.2cqw; background: #13233d; color: #e8eef8; box-shadow: 0 4cqw 10cqw -3cqw rgba(0, 0, 0, 0.5); visibility: hidden; }
+.hqa-mh { display: grid; grid-template-columns: max-content minmax(0, 1fr); column-gap: 3cqw; row-gap: 2.4cqw; align-items: baseline; }
+.hqa .hqa-mr { display: contents; }
+.hqa-ml { font: 400 3.4cqw/1.2 ui-monospace, 'SF Mono', Menlo, monospace; letter-spacing: 0.08em; text-transform: uppercase; color: #8fa6c4; white-space: nowrap; }
+.hqa-mv { overflow: hidden; font-size: 3.8cqw; line-height: 1.25; color: #dfe8f5; white-space: nowrap; text-overflow: ellipsis; }
+.hqa-mv.-s { font-weight: 600; color: #f2f6fc; }
+.hqa .hqa-mb { margin-top: 4cqw; font-size: 3.9cqw; line-height: 1.42; color: #e8eef8; }
+.hqa-mf { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 3cqw 2.4cqw; margin-top: 4.4cqw; }
+.hqa .hqa-ma { display: inline-flex; align-items: center; gap: 1.4cqw; padding: 1.8cqw 2.4cqw; border-radius: 1.8cqw; background: rgba(169, 200, 240, 0.1); font: 400 3.4cqw/1.2 ui-monospace, 'SF Mono', Menlo, monospace; color: #c9d8ee; white-space: nowrap; }
+.hqa-ic2 { display: block; width: 4cqw; height: auto; color: #a9c8f0; }
+.hqa .hqa-ms { display: inline-flex; align-items: center; justify-content: center; gap: 1.8cqw; height: 12.4cqw; margin-left: auto; padding: 0 4.6cqw; border-radius: 99px; background: var(--hq-blue); color: var(--hq-ink); font-size: 4.2cqw; font-weight: 600; white-space: nowrap; }
+.hqa-pl { display: block; width: 4.6cqw; height: auto; }
+.hqa-pl path { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; stroke-linecap: round; }
+.hqa-fly { position: absolute; left: 0; top: 0; z-index: 4; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.hqa-fp { visibility: hidden; }
+.hqa-fp path { fill: none; stroke: #f2f6fc; stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }
+.hqa-dots circle { fill: rgba(233, 240, 250, 0.6); visibility: hidden; }
+
+/* the line */
+.hqa-end { position: absolute; left: 7cqw; right: 7cqw; top: 0; bottom: 0; height: fit-content; margin: auto 0; padding-bottom: 2cqw; text-align: center; }
+.hqa .hqa-slogan { font-size: 8cqw; font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; color: #f2f6fc; }
+.hqa .hqa-sig { margin-top: 4.4cqw; font-size: 3.8cqw; font-weight: 500; color: #a9bcd6; }
+
+.hqa-note { position: absolute; right: 7cqw; bottom: 3cqw; font: 400 3.4cqw/1 ui-monospace, 'SF Mono', Menlo, monospace; letter-spacing: 0.02em; color: rgba(214, 226, 242, 0.72); }

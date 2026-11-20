@@ -1,0 +1,15 @@
+/* Van Impe: his home, a click on Portfolio, his Projects page, in a Safari window whose screen is exactly his
+   1440 × 900 viewport, so nothing of his page is cut (classes start with rva) */
+.it-tile.-rva { container-type: inline-size; --ww: 71.5cqw; --wt: 3.75cqw; }   /* 890:500 tile: (56.18 − (71.5 × 0.625 + 4)) / 2 */
+.rva { position: absolute; inset: 0; overflow: hidden; }
+.rva .rva-win { left: calc((100cqw - var(--ww)) / 2); top: var(--wt); width: var(--ww); border-radius: 1.2cqw; }
+.rva-scr { position: relative; aspect-ratio: 1440 / 900; overflow: hidden; background: #f6f6f4; }
+.rva-page { position: absolute; inset: 0; background: #f6f6f4; }
+.rva .ptr { z-index: 5; }
+.rva-grid { position: absolute; left: 0; top: 0; width: 100%; aspect-ratio: 1440 / 2200; will-change: transform; }
+.rva .rva-grid img, .rva .rva-home { position: absolute; display: block; max-width: none; height: auto; }
+.rva .rva-bg { left: 0; top: 0; width: 100%; }
+.rva .rva-home { left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 767px) {
+  .it-tile.-rva { --ww: 82cqw; --wt: 9.9cqw; }   /* 4:3 tile: (75 − (82 × 0.625 + 4)) / 2 */
+}

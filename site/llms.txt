@@ -1,0 +1,28 @@
+# Realis Studio
+
+> A UX/UI and software studio. Realis designs and builds websites, client portals and internal tools, in Dutch, French and English, at a fixed price per phase. A distributed studio: Brussels · Madrid · India.
+
+The site is in English (/), French (/fr/) and Dutch (/nl/). Contact: hello@realisstudio.com, +32 489 09 12 85; replies within 24 hours.
+
+## Studio
+
+- [Services](https://realisstudio.com/services/): websites first, in three packages (website; website with content management; website with a platform behind it), priced on request; then client portals, document workflows and internal tools, with a discovery sprint at €2,500 and projects from €10,000, excl. VAT
+- [Projects](https://realisstudio.com/projects/): all case studies
+- [Trust](https://realisstudio.com/trust/): what you can check before hiring the studio
+- [Contact](https://realisstudio.com/contact/): project enquiry form
+
+## Case studies
+
+- [Dr Axel De Lange](https://realisstudio.com/projects/axel-de-lange/): a trilingual practice site with procedure pages and consultation booking on every screen
+- [Rodolphe-Alexis Van Impe Architects](https://realisstudio.com/projects/rodolphe-alexis-van-impe/): a portfolio site that puts the photography first: full-bleed projects, minimal chrome, fast on a phone
+- [Approval portal](https://realisstudio.com/projects/approval-portal/): client work, shown anonymised: a portal where a practice approves its website field by field, in three languages
+- [Recall](https://realisstudio.com/projects/recall/): a family platform with a home display: roles, private storage and an archive only the family can open
+- [Vidimus](https://realisstudio.com/projects/vidimus/): a Realis product, shown on a fictitious report: a review desk for long reports, where the machine rechecks and a person signs off
+- [Headquarters](https://realisstudio.com/projects/headquarters/): the studio's own command centre: projects, missions, a lead pipeline and invoicing in one place
+
+## Optional
+
+- [Français](https://realisstudio.com/fr/)
+- [Nederlands](https://realisstudio.com/nl/)
+- [Legal notice](https://realisstudio.com/legal/)
+- [Privacy notice](https://realisstudio.com/privacy/)

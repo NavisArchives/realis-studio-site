@@ -1,0 +1,180 @@
+/* Vidimus, the animated tile (ad B, the 16:9 mini ad): classes start with vda / vdoc / vd-.
+   Desktop values in the base rules (tile 890:500, 774 px at 1440); the phone tile (357 px) in the media query. */
+.vda { --dock: 0.46; --dx: 5; --dy: 3; --stack: 0;
+  position: absolute; inset: 0; overflow: hidden; color: #fff; text-align: left;
+  font-family: 'Inter Tight', sans-serif; font-variant-numeric: tabular-nums; -webkit-font-smoothing: antialiased; }
+.vda p { margin: 0; }
+.vda .-h { --s: #e5534b; } .vda .-m { --s: #e3a008; } .vda .-l { --s: #8c9692; }
+.vda .ck { width: 1.7cqw; height: auto; flex: none; }
+
+/* 1 · the question, which docks as the header (laid out at the hook's size, scaled down to dock) */
+.vda-q { position: absolute; left: 0; top: 0; z-index: 7; white-space: nowrap; font-size: 5.4cqw; font-weight: 600; line-height: 1.12; letter-spacing: -0.025em; transform-origin: 0 0; visibility: hidden; }
+.vda-wm { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em; }
+.vda-w { display: inline-block; }
+
+/* 2 · the report's three pages (live HTML, Dutch as the sample file), on the green */
+.vda-row { position: absolute; inset: 0; transform-origin: 50% 45%; }
+.vda-pg { position: absolute; top: 8.6cqw; width: 23.5cqw; aspect-ratio: 1 / 1.414; }
+.vda-pg.-p1 { left: 9.75cqw; } .vda-pg.-p2 { left: 38.25cqw; } .vda-pg.-p3 { left: 66.75cqw; }
+.vda-sh { position: absolute; left: 5%; right: 5%; top: 6%; bottom: -2%; border-radius: 3%; background: rgba(0, 0, 0, 0.42); filter: blur(1.8cqw); }
+.vda-pp { position: absolute; inset: 0; overflow: hidden; background: #fff; border-radius: 0.25cqw; container-type: inline-size; }
+.vda-ov { position: absolute; inset: 0; pointer-events: none; }
+.vdoc { position: absolute; inset: 0; padding: 7.5cqw 8cqw; color: #23282a; font: 400 2.5cqw/1.45 'Inter Tight', sans-serif; }
+.vdoc .vd-hd, .vdoc .vd-ft { display: flex; justify-content: space-between; font-size: 1.9cqw; letter-spacing: 0.06em; text-transform: uppercase; color: #8a8f8c; }
+.vdoc .vd-ft { position: absolute; left: 8cqw; right: 8cqw; bottom: 5cqw; }
+.vdoc h3 { margin: 5.5cqw 0 1cqw; font-size: 6.2cqw; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: #15191a; }
+.vdoc .vd-sub { margin-bottom: 3.6cqw; font-size: 2.1cqw; color: #7a807d; }
+.vdoc h4 { margin: 3.6cqw 0 1.4cqw; font-size: 3.2cqw; font-weight: 600; color: #15191a; }
+.vdoc h4.vd-h0 { margin-top: 0; }
+.vdoc p { margin: 0 0 2.2cqw; }
+.vdoc .vd-kp { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2cqw; margin: 2.6cqw 0 3cqw; }
+.vdoc .vd-kp div { padding: 1.8cqw 2cqw; border: 1px solid #e3e6e4; }
+.vdoc .vd-kp b { display: block; font-size: 3.1cqw; font-weight: 600; } .vdoc .vd-kp span { font-size: 1.9cqw; color: #7a807d; }
+.vdoc .vd-nt { padding: 2.2cqw 3cqw; border-left: 0.7cqw solid #c9cfcc; background: #f5f6f5; }
+.vdoc table { width: 100%; border-collapse: collapse; margin: 1.6cqw 0 3.4cqw; font-size: 2.3cqw; }
+.vdoc th { text-align: left; font-weight: 500; font-size: 1.8cqw; letter-spacing: 0.05em; text-transform: uppercase; color: #7c8581; padding: 0 1cqw 1.2cqw 0; border-bottom: 1px solid #e3e6e4; }
+.vdoc td { padding: 1.3cqw 1cqw 1.3cqw 0; border-bottom: 1px solid #eef0ee; vertical-align: top; }
+.vdoc .r { text-align: right; white-space: nowrap; }
+.vdoc .vd-fig p { display: grid; grid-template-columns: 16cqw 1fr 7cqw; gap: 1.6cqw; align-items: center; margin: 0 0 1.3cqw; font-size: 2.2cqw; }
+.vdoc .vd-fig i { height: 1.6cqw; border-radius: 0.3cqw; background: #2f3a36; }
+.vdoc .vd-fig .vd-cap { display: block; margin-top: 1.8cqw; font-size: 2cqw; color: #7c8581; }
+.vdoc mark { color: inherit; padding: 0 0.15em; margin: 0 -0.15em; border-radius: 0.25em; background: linear-gradient(var(--c), var(--c)) no-repeat 0 0 / var(--w, 0%) 100%; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.vdoc mark.-h { --c: rgba(229, 83, 75, 0.26); } .vdoc mark.-m { --c: rgba(227, 160, 8, 0.3); } .vdoc mark.-l { --c: rgba(140, 150, 146, 0.32); }
+.vdoc .vd-dg { display: inline-block; height: 1.45em; overflow: hidden; vertical-align: top; }
+.vdoc .vd-dg b { display: block; font-weight: inherit; }
+
+/* the agents' marks under the words, and the agreement badges of the cross-check */
+.vda-bar { position: absolute; height: 0.3cqw; border-radius: 0.3cqw; background: var(--ac); transform-origin: 0 50%; }
+.vda-bdg { position: absolute; padding: 0.28cqw 0.55cqw; border-radius: 0.5cqw; background: var(--s); color: #fff; font-size: 1.3cqw; font-weight: 600; line-height: 1.05; white-space: nowrap; box-shadow: 0 0.3cqw 0.9cqw rgba(0, 0, 0, 0.22); }
+.vda-bdg.-h { --s: #d4443c; } .vda-bdg.-m { --s: #b98005; } .vda-bdg.-l { --s: #6f7975; }
+
+/* what a reader has to check */
+.vda-tags { position: absolute; left: 0; right: 0; top: 22cqw; z-index: 4; display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2cqw; pointer-events: none; }
+.vda-tg { display: inline-flex; align-items: center; gap: 0.8cqw; padding: 1cqw 1.9cqw 1cqw 1.5cqw; border-radius: 99cqw; background: rgba(13, 20, 17, 0.92); box-shadow: 0 0.8cqw 2.4cqw rgba(0, 0, 0, 0.3); font-size: 1.9cqw; font-weight: 600; letter-spacing: -0.01em; visibility: hidden; }
+.vda-tg i { width: 0.9cqw; height: 0.9cqw; border-radius: 50%; background: #8fd0a8; }
+
+/* 3 · the agents: a loupe each, its ring in its model's colour, the model's chip beside it */
+.vda-ag { position: absolute; left: 0; top: 0; z-index: 5; width: 8.4cqw; aspect-ratio: 1; visibility: hidden; }
+.vda-ag::after, .vda-lens::after { content: ''; position: absolute; left: 84%; top: 84%; width: 42%; height: 11%; border-radius: 1cqw; background: linear-gradient(#3a403c, #1d211f); transform: rotate(45deg); transform-origin: 0 50%; box-shadow: 0 0.5cqw 1.2cqw rgba(0, 0, 0, 0.35); }
+.vda-gl { position: absolute; inset: 0; z-index: 1; overflow: hidden; border-radius: 50%; background: #5d7d6c; }
+.vda-ag .vda-gl { box-shadow: 0 0 0 0.3cqw #fff, 0 0 0 0.62cqw var(--ac), 0 1.2cqw 2.8cqw rgba(0, 0, 0, 0.38); }
+.vda-lin { position: absolute; left: 0; top: 0; transform-origin: 0 0; container-type: inline-size; }
+.vda-lin .vda-sh, .vda-lin .vda-bdg, .vda-lin .vda-pp.-clean { display: none; }
+.vda-mc { position: absolute; right: 46%; top: 100%; z-index: 2; display: inline-flex; align-items: center; gap: 0.55cqw; margin-top: 0.5cqw; padding: 0.45cqw 1cqw 0.45cqw 0.7cqw; border-radius: 99cqw; background: #fff; color: #141917; font-size: 1.45cqw; font-weight: 600; letter-spacing: -0.01em; line-height: 1.1; white-space: nowrap; box-shadow: 0 0.4cqw 1.4cqw rgba(0, 0, 0, 0.28); }
+.vda-mc svg { width: 1.6cqw; height: 1.6cqw; flex: none; }
+
+/* 5 · the overview: 13 findings, critical first */
+.vda-ovw { position: absolute; left: 3cqw; right: 3cqw; top: 8.6cqw; height: 33.4cqw; z-index: 4; display: flex; flex-direction: column; padding: 1.9cqw 2.4cqw 1.2cqw; border-radius: 1.4cqw; background: #0f1714; color: #e8ece9; box-shadow: 0 2cqw 5cqw -1cqw rgba(0, 0, 0, 0.45); visibility: hidden; }
+.vda-oh { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 1.3cqw; border-bottom: 1px solid rgba(255, 255, 255, 0.09); }
+.vda-on { display: flex; align-items: baseline; gap: 1cqw; }
+.vda-on b { display: inline-block; height: 1.05em; overflow: hidden; font-size: 4.6cqw; font-weight: 600; line-height: 1.05; letter-spacing: -0.02em; }
+.vda-up { display: block; } .vda-up i { display: block; font-style: normal; text-align: right; }
+.vda-on > span { font-size: 1.8cqw; color: #9fb0a7; }
+.vda-ot { display: grid; justify-items: end; gap: 0.8cqw; }
+.vda-os, .vda-ok { display: flex; gap: 2cqw; font-size: 1.5cqw; color: #c3cec8; }
+.vda-os > span, .vda-ok > span { display: inline-flex; align-items: center; gap: 0.6cqw; }
+.vda-os i { width: 0.9cqw; height: 0.9cqw; border-radius: 50%; background: var(--s); }
+.vda-os b, .vda-ok b { font-weight: 600; color: #fff; }
+.vda-ok { color: #9fb0a7; }
+.vda-ol { flex: 1; display: grid; grid-auto-flow: column; grid-template-columns: 1.08fr 0.92fr; grid-template-rows: repeat(7, 1fr); column-gap: 2.2cqw; padding-top: 0.4cqw; min-height: 0; }
+.vda-or { display: flex; align-items: center; gap: 0.65cqw; min-width: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.06); font-size: 1.45cqw; }
+.vda-or i { flex: none; width: 0.9cqw; height: 0.9cqw; border-radius: 50%; background: var(--s); }
+.vda-or .n { flex: none; width: 2.95cqw; color: #9fb0a7; }
+.vda-or .t { flex: 1; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.vda-or .k { flex: none; padding: 0.3cqw 0.65cqw; border-radius: 0.5cqw; background: rgba(255, 255, 255, 0.08); color: #c3cec8; font-size: 1.3cqw; }
+.vda-gh { position: absolute; left: 0; top: 0; z-index: 6; border-radius: 1.4cqw; background: #0f1714; visibility: hidden; }
+
+/* 6 · a person decides: the count, the finding's card, the page with its marks (and its corrected twin) */
+.vda-cnt { position: absolute; left: 5cqw; top: 8.6cqw; z-index: 6; display: flex; align-items: baseline; gap: 1cqw; transform-origin: 0 50%; visibility: hidden; }
+.vda-ck { position: absolute; right: 100%; top: 50%; width: 3.4cqw; height: 3.4cqw; margin: -1.7cqw 1cqw 0 0; fill: none; stroke: #8fd0a8; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.vda-num { display: inline-block; height: 1.1em; overflow: hidden; font-size: 3.6cqw; font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; }
+.vda-strip { display: block; } .vda-strip b { display: block; font-weight: 600; text-align: right; }
+.vda-cnl { font-size: 1.7cqw; color: rgba(255, 255, 255, 0.78); }
+.vda-cards { position: absolute; left: 5cqw; top: 13.8cqw; width: 48cqw; height: 28.2cqw; z-index: 5; }
+.vda-cd { position: absolute; inset: 0; display: flex; flex-direction: column; padding: 1.9cqw 2.3cqw; border-radius: 1.4cqw; background: #0f1714; color: #e8ece9; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06), 0 2cqw 5cqw -1cqw rgba(0, 0, 0, 0.45); visibility: hidden; }
+.vda-ct { display: flex; align-items: center; gap: 0.8cqw; margin-bottom: 1.1cqw !important; font-size: 1.3cqw; }
+.vda-ct .n { margin-right: 0.3cqw; font-size: 1.5cqw; color: #9fb0a7; }
+.vda-ct .sv, .vda-ct .ty { padding: 0.35cqw 0.8cqw; border-radius: 0.5cqw; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+.vda-ct .sv { box-shadow: inset 0 0 0 1px var(--s); }
+.vda-cd.-h .sv { color: #ff8f86; } .vda-cd.-m .sv { color: #f2c14e; } .vda-cd.-l .sv { color: #b9c2be; }
+.vda-ct .ty { color: #c3cec8; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18); }
+.vda-ct .pg { color: #9fb0a7; }
+.vda-cn { margin-bottom: 1.2cqw !important; font-size: 1.95cqw; font-weight: 600; line-height: 1.25; color: #f1f4f2; }
+.vda-cw, .vda-cf { padding: 0.75cqw 1.1cqw; border-radius: 0.7cqw; font-size: 1.5cqw; line-height: 1.35; }
+.vda-cw { background: rgba(229, 83, 75, 0.12); color: #f0bcb7; text-decoration: line-through; text-decoration-color: rgba(229, 83, 75, 0.6); }
+.vda-cl { margin: 1.1cqw 0 0.55cqw !important; font-size: 1.3cqw; letter-spacing: 0.06em; text-transform: uppercase; color: #9fb0a7; }
+.vda-cf { background: rgba(120, 190, 150, 0.12); box-shadow: inset 0 0 0 1px rgba(120, 190, 150, 0.35); color: #d3ecdd; }
+.vda-cb { position: relative; flex: none; height: 3.5cqw; margin-top: auto; }
+.vda-go, .vda-ap { position: absolute; left: 0; top: 0; display: inline-flex; align-items: center; gap: 0.7cqw; height: 100%; padding: 0 1.8cqw; border-radius: 99cqw; font-size: 1.5cqw; font-weight: 600; white-space: nowrap; }
+.vda-go { background: #8fd0a8; color: #0d1712; }
+.vda-ap { background: rgba(143, 208, 168, 0.16); color: #8fd0a8; visibility: hidden; }
+.vda-solo { position: absolute; left: 64.6cqw; top: 8.6cqw; width: 30.4cqw; aspect-ratio: 1 / 1.414; z-index: 3; }
+.vda-solo .vdoc mark { --w: 100%; }
+.vda-lens { position: absolute; left: 0; top: 0; z-index: 6; width: 13cqw; aspect-ratio: 1; visibility: hidden; }
+.vda-lens .vda-gl { background: #fff; box-shadow: 0 0 0 0.35cqw rgba(255, 255, 255, 0.95), 0 0 0 0.62cqw rgba(30, 36, 33, 0.85), 0 1.4cqw 3.4cqw rgba(0, 0, 0, 0.4); }
+
+/* the captions (scenes 3–6), bottom left, two lines at most */
+.vda-cap { position: absolute; left: 5cqw; bottom: 4.4cqw; z-index: 7; max-width: 60cqw; overflow: hidden; padding-bottom: 0.12em; font-size: 3.2cqw; font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; }
+.vda-cap > span { display: block; text-wrap: balance; }
+
+/* 8 · the end card */
+.vda-end { position: absolute; inset: 0; z-index: 7; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 8cqw; text-align: center; pointer-events: none; }
+.vda-ln { text-wrap: balance; font-size: 4.6cqw; font-weight: 600; line-height: 1.12; letter-spacing: -0.025em; }
+.vda-sl { text-wrap: balance; margin-top: 1.5cqw !important; font-size: 2.1cqw; color: rgba(255, 255, 255, 0.88); visibility: hidden; }
+.vda-sg { margin-top: 3.4cqw !important; font-size: 1.45cqw; letter-spacing: 0.02em; color: rgba(255, 255, 255, 0.62); visibility: hidden; }
+.vda-note { position: absolute; right: 2.4cqw; bottom: 2cqw; z-index: 7; font: 500 1.4cqw/1 ui-monospace, 'SF Mono', Menlo, monospace; letter-spacing: 0.02em; color: rgba(255, 255, 255, 0.66); visibility: hidden; }
+
+@media (max-width: 767px) {
+  .it-tile.-wide.-vda { aspect-ratio: 358 / 700; }
+  .vda { --dock: 0.56; --dx: 6; --dy: 5.6; --stack: 1; }
+  .vda .ck { width: 3.6cqw; }
+  .vda-q { font-size: 8.4cqw; }
+  .vda-pg { top: 48cqw; left: 12cqw; width: 76cqw; }
+  .vda-pg.-p1 { left: 12cqw; z-index: 3; } .vda-pg.-p2 { left: 15cqw; top: 45.5cqw; z-index: 2; } .vda-pg.-p3 { left: 18cqw; top: 43cqw; z-index: 1; }
+  .vda-sh { filter: blur(4cqw); }
+  .vda-pp { border-radius: 0.6cqw; }
+  .vda-bar { height: 0.75cqw; border-radius: 0.6cqw; }
+  .vda-bdg { padding: 0.7cqw 1.3cqw; border-radius: 1.2cqw; font-size: 3.4cqw; }
+  .vda-tags { top: 100cqw; padding: 0 6cqw; gap: 2.4cqw; }
+  .vda-tg { gap: 1.8cqw; padding: 2.2cqw 3.8cqw 2.2cqw 3cqw; font-size: 3.8cqw; }
+  .vda-tg i { width: 2cqw; height: 2cqw; }
+  .vda-ag { width: 21cqw; }
+  .vda-ag .vda-gl { box-shadow: 0 0 0 0.7cqw #fff, 0 0 0 1.5cqw var(--ac), 0 2.4cqw 5.6cqw rgba(0, 0, 0, 0.38); }
+  .vda-ag::after, .vda-lens::after { border-radius: 2cqw; }
+  .vda-mc { gap: 1.3cqw; margin-top: 1.3cqw; padding: 1.1cqw 2.4cqw 1.1cqw 1.7cqw; font-size: 3.4cqw; }
+  .vda-mc svg { width: 3.8cqw; height: 3.8cqw; }
+  .vda-ovw { left: 4cqw; right: 4cqw; top: 44cqw; height: 144cqw; padding: 4.4cqw 4.6cqw 2.4cqw; border-radius: 3cqw; }
+  .vda-oh { flex-direction: column; align-items: flex-start; gap: 2.4cqw; padding-bottom: 3cqw; }
+  .vda-on { gap: 2cqw; } .vda-on b { font-size: 9.4cqw; } .vda-on > span { font-size: 3.8cqw; }
+  .vda-ot { justify-items: start; gap: 1.6cqw; }
+  .vda-os, .vda-ok { flex-wrap: wrap; gap: 1.2cqw 3.6cqw; font-size: 3.4cqw; }
+  .vda-os > span, .vda-ok > span { gap: 1.2cqw; }
+  .vda-os i { width: 2cqw; height: 2cqw; }
+  .vda-ol { grid-auto-flow: row; grid-template-columns: 1fr; grid-template-rows: repeat(13, 1fr); padding-top: 1cqw; }
+  .vda-or { gap: 2cqw; font-size: 3.5cqw; }
+  .vda-or i { width: 2cqw; height: 2cqw; } .vda-or .n { width: 6.8cqw; }
+  .vda-or .k { padding: 0.5cqw 1.6cqw; border-radius: 1.1cqw; font-size: 3.4cqw; }
+  .vda-gh { border-radius: 3cqw; }
+  .vda-cnt { left: 6cqw; top: 45cqw; gap: 2cqw; }
+  .vda-ck { width: 7.4cqw; height: 7.4cqw; margin: -3.7cqw 2.2cqw 0 0; }
+  .vda-num { font-size: 8cqw; } .vda-cnl { font-size: 3.8cqw; }
+  .vda-cards { left: 4cqw; top: auto; bottom: 8.6cqw; width: 92cqw; height: 64cqw; }
+  .vda-cd { padding: 4cqw 4.4cqw; border-radius: 3cqw; }
+  .vda-ct { gap: 1.8cqw; margin-bottom: 2.4cqw !important; font-size: 3.4cqw; }
+  .vda-ct .n { font-size: 3.4cqw; margin-right: 0.6cqw; }
+  .vda-ct .sv, .vda-ct .ty { padding: 0.6cqw 1.6cqw; border-radius: 1.1cqw; }
+  .vda-cn { margin-bottom: 2.4cqw !important; font-size: 4.2cqw; }
+  .vda-cw, .vda-cf { padding: 1.6cqw 2.4cqw; border-radius: 1.6cqw; font-size: 3.4cqw; }
+  .vda-cl { margin: 2.2cqw 0 1.2cqw !important; font-size: 3.4cqw; }
+  .vda-cb { height: 8.6cqw; }
+  .vda-go, .vda-ap { gap: 1.6cqw; padding: 0 4cqw; font-size: 3.6cqw; }
+  .vda-solo { left: 20cqw; top: 56cqw; width: 60cqw; }
+  .vda-lens { width: 30cqw; }
+  .vda-lens .vda-gl { box-shadow: 0 0 0 0.8cqw rgba(255, 255, 255, 0.95), 0 0 0 1.4cqw rgba(30, 36, 33, 0.85), 0 3cqw 7cqw rgba(0, 0, 0, 0.4); }
+  .vda-cap { left: 6cqw; right: 6cqw; top: 22.5cqw; bottom: auto; max-width: none; font-size: 5.4cqw; }
+  .vda-end { padding: 0 8cqw; }
+  .vda-ln { font-size: 8.8cqw; }
+  .vda-sl { margin-top: 4cqw !important; font-size: 4.4cqw; }
+  .vda-sg { margin-top: 7cqw !important; font-size: 3.5cqw; }
+  .vda-note { right: 4cqw; bottom: 2.8cqw; font-size: 3.4cqw; }
+}

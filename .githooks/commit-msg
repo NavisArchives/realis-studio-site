@@ -1,0 +1,15 @@
+#!/bin/sh
+# Enforce Conventional Commits on the subject line.
+# Enable once per clone:  git config core.hooksPath .githooks
+subject=$(sed -n '1p' "$1")
+case "$subject" in
+  Merge*|Revert*|fixup!*|squash!*) exit 0 ;;
+esac
+if ! printf '%s' "$subject" | grep -Eq '^(feat|fix|docs|style|refactor|perf|test|build|ci|chore)(\([a-z0-9./-]+\))?!?: [a-z].+$'; then
+  echo "commit-msg: subject must be 'type(scope): lower-case summary', e.g. 'fix(admin): reject empty uploads'" >&2
+  exit 1
+fi
+if [ "${#subject}" -gt 72 ]; then
+  echo "commit-msg: subject is ${#subject} characters; keep it under 72" >&2
+  exit 1
+fi
