@@ -60,6 +60,8 @@ npx wrangler dev
 
 Designed and built by Realis Studio. Lead software engineer: Andy Huizenga.
 
+The email address and the two phone numbers in the site are the studio’s published contact details, shown on every page of realisstudio.com.
+
 ## License
 
 All rights reserved — shared for review only. The websites shown in the projects belong to the clients concerned.
