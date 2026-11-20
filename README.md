@@ -35,6 +35,8 @@ Static pages served from Cloudflare's edge, with one small Worker for the contac
 | `scripts/` | `release.sh` (test, deploy, notify search engines, smoke test), `smoke-live.mjs`, `indexnow.mjs` |
 | `src/` | The site settings and the three dictionaries the tests read |
 
+The email address and the two phone numbers in the site are the studio’s published contact details, shown on every page of realisstudio.com.
+
 ## Run it
 
 Needs Node 22.18 or later (the tests run TypeScript directly).
@@ -59,8 +61,6 @@ npx wrangler dev
 ## Credits
 
 Designed and built by Realis Studio. Lead software engineer: Andy Huizenga.
-
-The email address and the two phone numbers in the site are the studio’s published contact details, shown on every page of realisstudio.com.
 
 ## License
 
